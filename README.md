@@ -15,7 +15,7 @@ This is **annoying** and **error-prone**.
 ## The Solution?
     
 ko.promise attempts to solve this by merging observables and the [Promises/A contract][2]. It extends observables with promise-like behavior, allowing the developer to:
-- Set up promise pipelines and co-dependent promises (piggybacking off `ko.computed`)
+- Set up promise pipelines and multi-dependent promises (piggybacking off `ko.computed`)
 - Declaratively write MVVM applications to behave predictably in a totally async progamming model
 
 ### Basic Example:
