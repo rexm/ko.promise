@@ -2,7 +2,7 @@
 
 ## The Problem
 
-In Knockout-based applications of any significant size, you may find yourself writing a lot of the same boilerplate code - wherein you copy the result of a promise into a `ko.observable`:
+In [Knockout][1]-based applications of any significant size, you may find yourself writing a lot of the same boilerplate code - wherein you copy the result of a promise into a `ko.observable`:
 
     var myObservable = ko.observable();
     var promiseResult = getSomeResourceAsync();
@@ -14,7 +14,7 @@ This is **annoying** and **error-prone**.
 
 ## The Solution?
     
-ko.promise attempts to solve this by merging observables and the Promises/A contract. It extends observables with promise-like contracts, allowing the developer to:
+ko.promise attempts to solve this by merging observables and the [Promises/A contract][2]. It extends observables with promise-like behavior, allowing the developer to:
 - Set up promise pipelines and co-dependent promises (piggybacking off `ko.computed`)
 - Declaratively write MVVM applications to behave predictably in a totally async progamming model
 
@@ -37,3 +37,6 @@ And bind it:
         text: transformedPromise"></div>
 
 Thorough documentation forthcoming :)
+
+[1]: http://knockoutjs.com
+[2]: http://wiki.commonjs.org/wiki/Promises/A
