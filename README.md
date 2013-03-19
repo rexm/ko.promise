@@ -18,4 +18,22 @@ ko.promise attempts to solve this by merging observables and the Promises/A cont
 - Set up promise pipelines and co-dependent promises (piggybacking off `ko.computed`)
 - Declaratively write MVVM applications to behave predictably in a totally async progamming model
 
+### Basic Example:
+
+We can declare a `ko.promise`:
+
+    var observablePromise = ko.promise(getSomeResourceAsync());
+
+Pipeline it:
+
+    var transformedPromise = observablePromise.then(function(value) {
+        return value * 2;
+    });
+    
+And bind it:
+
+    <div data-bind="
+        visible: transformedPromise.loading,
+        text: transformedPromise"></div>
+
 Thorough documentation forthcoming :)
