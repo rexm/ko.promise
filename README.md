@@ -10,7 +10,7 @@ In [Knockout][1]-based applications of any significant size, you may find yourse
       myObservable(value);
     });
     
-This is **annoying** and **error-prone**.
+This is **annoying**, **error-prone**, and becomes **unmanageable** for complex, asynchronous browser-based applications.
 
 ## The Solution?
     
