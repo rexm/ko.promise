@@ -4,11 +4,13 @@
 
 In [Knockout][1]-based applications of any significant size, you may find yourself writing a lot of the same boilerplate code - wherein you copy the result of a promise into a `ko.observable`:
 
-    var myObservable = ko.observable();
-    var promiseResult = getSomeResourceAsync();
-    promiseResult.then(function(value) {
-      myObservable(value);
-    });
+```js
+var myObservable = ko.observable();
+var promiseResult = getSomeResourceAsync();
+promiseResult.then(function(value) {
+  myObservable(value);
+});
+```
     
 This is **annoying**, **error-prone**, and becomes **unmanageable** for complex, asynchronous browser-based applications.
 
@@ -21,20 +23,26 @@ ko.promise attempts to solve this by merging observables and the [Promises/A con
 ### Basic Example:
 
 We can declare a `ko.promise`:
-
-    var observablePromise = ko.promise(getSomeResourceAsync());
+    
+```js
+var observablePromise = ko.promise(getSomeResourceAsync());
+```
 
 Pipeline it:
 
-    var transformedPromise = observablePromise.then(function(value) {
-        return value * 2;
-    });
+```js
+var transformedPromise = observablePromise.then(function(value) {
+    return value * 2;
+});
+```
     
 And bind it:
 
-    <div data-bind="
-        visible: transformedPromise.loading,
-        text: transformedPromise"></div>
+```html
+<div data-bind="
+    visible: transformedPromise.loading,
+    text: transformedPromise"></div>
+```
 
 Thorough documentation forthcoming :)
 
